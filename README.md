@@ -9,4 +9,76 @@ Compiler from the language CPL to the language QUAD
 - `header.py` - Contains helper methods used by the other files.
 
 
+# Code Examples
+<table>
+    <tr>
+        <th>CPL</th>
+        <th>Quad</th>
+    </tr>
+    <tr>
+<td>
 
+```c
+/* Finding minimum between two numbers */
+a, b: float;
+{
+    input(a);
+    input(b);
+    if (a < b)
+        output(a);
+    else
+        output(b);
+}
+```
+
+</td>
+<td>
+
+```{assembly, attr.source='.numberLines'}
+RINP a
+RINP b
+RLSS t1 a b
+JMPZ L1 t1
+RPRT a
+JUMP L2
+L1:
+RPRT b
+L2:
+HALT
+```
+
+```c
+/* Sum a list of integers */
+N, num, sum : int;
+{
+    sum = 0;
+    while (N > 0) {
+        input(num);
+        sum = sum + num;
+        N = N - 1;
+    }
+    output(sum);
+}
+```
+
+</td>
+<td>
+
+```{assembly, attr.source='.numberLines'}
+IASN sum 0
+L1:
+IGRT t1 N 0
+JMPZ L2 t1 
+IINP num
+IADD sum sum num
+ISUB N N 1
+JUMP L1
+L2:
+IPRT sum
+HALT
+```
+
+</td>
+    </tr>
+    <tr>
+<td>
