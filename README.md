@@ -47,8 +47,13 @@ L2:
 HALT
 ```
 
+</td>
+    </tr>
+    <tr>
+<td>
+
 ```c
-/* Sum a list of integers */
+/* Sum a variadic list of integers */
 N, num, sum : int;
 {
     sum = 0;
@@ -80,5 +85,4 @@ HALT
 
 </td>
     </tr>
-    <tr>
-<td>
+</table>
